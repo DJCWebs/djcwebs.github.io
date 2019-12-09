@@ -20,15 +20,18 @@
       $body.on("click", "[data-scroll]", function() {
         var $scrollTo = $("#" + $(this).attr("data-scroll"));
         var topValue = $scrollTo.offset().top + $("body").scrollTop();
-        alert(topValue + "test21323");
 
         if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+          alert("mobile");
+          window.scrollTop = topValue;
           //window.scrollTo(0, topValue);
-
-          $body.animate({
-            scrollTop: topValue
-          }, 2000);
+          //window.scrollTo(0, topValue);
+          //$body.animate({
+          //  scrollTop: topValue
+          //}, 2000);
         } else {
+          alert("not mobile");
+
           $("html, body").animate({
             scrollTop: topValue
           }, 2000);
