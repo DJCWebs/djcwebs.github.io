@@ -23,7 +23,7 @@
         var $scrollTo = $("#" + $(this).attr("data-scroll"));
         var topValue = $scrollTo.offset().top + $("body").scrollTop();
         alert(topValue);
-        $("html, body").animate({
+        $("body").animate({
           scrollTop: topValue
         }, 2000);
       });
