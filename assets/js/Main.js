@@ -9,6 +9,8 @@
    */
   Initialise: function() {
 
+    alert("1212121");
+
     // Fade in elements
     setTimeout(function() {
       $(".about_btn_cont").addClass("about_btn_fade_in");
@@ -35,7 +37,7 @@
 
         if (CaliMain.IsMobile) {
           // Mobile solution
-          $(".cali_header_img").after($scrollTo);
+          $(".cali_header_img").after($scrollTo.detach());
         } else {
           // Scroll to
           var topValue = $scrollTo.offset().top + $("body").scrollTop();
@@ -95,11 +97,11 @@
             $body.append($dropDownMenu);
             var handlerVal = "x" + Math.random() * 10000;
 
-            $body.on("click." + handlerVal, ":not(.dropdown_menu)", function() {
+            $body.on("click." + handlerVal, ":not(.dropdown_menu):not(.dropdown_menu a)", function() {
               $dropDownMenu.remove();
               $body.off("." + handlerVal);
             });
-            $body.on("touchstart." + handlerVal, ":not(.dropdown_menu)", function() {
+            $body.on("touchstart." + handlerVal, ":not(.dropdown_menu):not(.dropdown_menu a)", function() {
               $dropDownMenu.remove();
               $body.off("." + handlerVal);
             });
