@@ -9,7 +9,7 @@
    */
   Initialise: function() {
 
-    alert("hello");
+    alert("goodbye");
 
     // Fade in elements
     setTimeout(function() {
@@ -104,6 +104,11 @@
             var handlerVal = "x" + Math.random() * 10000;
 
             $body.on("click." + handlerVal, ":not(.dropdown_menu)", function() {
+              $dropDownMenu.remove();
+              $body.off("." + handlerVal);
+            });
+
+            $body.on("touchstart." + handlerVal, ":not(.dropdown_menu)", function() {
               $dropDownMenu.remove();
               $body.off("." + handlerVal);
             });
