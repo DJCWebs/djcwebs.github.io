@@ -9,7 +9,7 @@
    */
   Initialise: function() {
 
-    alert("44");
+    alert("66");
 
     // Fade in elements
     setTimeout(function() {
@@ -62,6 +62,7 @@
 
       // Video img click
       $body.on("click", "[data-parts]", function(event) {
+        debugger;
         var partsText = $(this).attr("data-parts");
         var parts = partsText.split("|,|");
 
@@ -96,11 +97,9 @@
             $dropDownMenu.css("left", event.clientX + "px");
             $body.append($dropDownMenu);
 
-            var handlerVal = "x" + Math.random() * 10000;
-
-            $body.on("click." + handlerVal, ":not(.dropdown_menu)", function() {
-              $dropDownMenu.remove();
-              $body.off("." + handlerVal);
+            $body.off(".videoDropHandler").on("click.videoDropHandler", ":not(.dropdown_menu)", function() {
+              $(".dropdown_menu").remove();
+              $body.off(".videoDropHandler");
             });
           }
         }
@@ -118,7 +117,6 @@
 
     if (CaliMain.IsMobile) {
       var innerHeight = window.innerHeight;
-      alert("height " + innerHeight);
       var $contentSections = $(".content_section:not(.no_content_props)");
       $contentSections.css("height", innerHeight + "px");
       $contentSections.css("max-height", innerHeight + "px");
