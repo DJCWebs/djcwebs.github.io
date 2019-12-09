@@ -1,0 +1,174 @@
+﻿body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif !important;
+    overflow: hidden;
+}
+
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+::-webkit-scrollbar {
+    background-color: #fff;
+    width: 16px;
+}
+
+/* background of the scrollbar except button or resizer */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* scrollbar itself */
+::-webkit-scrollbar-thumb {
+    background-color: #babac0;
+    border-radius: 16px;
+    border: 4px solid #fff
+}
+
+/* set button(top and bottom of the scrollbar) */
+::-webkit-scrollbar-button {
+    display: none
+}
+
+nav.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    min-height: 75px;
+
+    .navbar-brand, .nav-link, .navbar-toggler {
+        color: white !important;
+        font-size: 22px;
+    }
+
+    .nav-link {
+        //border-bottom: thin solid transparent;
+        padding: 0;
+        margin: 0 1rem;
+
+        &:hover {
+            //border-bottom: thin solid white;
+        }
+    }
+
+    .navbar-toggler {
+        background-color: white;
+
+        i.fas {
+            color: black;
+        }
+    }
+
+    .navbar-logo {
+        transition: 1s !important;
+        position: absolute;
+        right: 0;
+
+        img {
+            transition: 1s;
+            max-width: 100px;
+        }
+    }
+
+    .nav_item_highlighter {
+        position: absolute;
+        width: 92.19px;
+        border-bottom: thin solid white;
+        bottom: 18px;
+        transition: 0.5s linear;
+        left: 16px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    @media only screen and (min-width: 991px) {
+
+        .nav-item:hover ~ .nav_item_highlighter {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #navgallery:hover ~ .nav_item_highlighter {
+            left: 32px;
+            width: 92.19px;
+        }
+
+        #navvideos:hover ~ .nav_item_highlighter {
+            left: 156.19px;
+            width: 89.64px;
+        }
+    }
+
+    @media only screen and (max-width: 991px) {
+
+        .navbar-collapse.show, .navbar-collapse.collapsing {
+            .nav-item:first-child, .nav-item:last-child {
+                padding-top: 10px;
+            }
+        }
+
+        .navbar-collapse.show ~ .navbar-logo, .navbar-collapse.collapsing ~ .navbar-logo {
+            position: absolute !important;
+            right: 5px;
+
+            img {
+                max-width: 190px !important;
+            }
+        }
+
+        .navbar-collapse.collapsing ~ .navbar-logo img {
+            max-width: 100px !important;
+            transition: 0.3s;
+        }
+
+        .navbar-collapse.show ~ .navbar-logo img {
+            max-width: 190px !important;
+            transition: 0.3s;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        .navbar-collapse.show ~ .navbar-logo img {
+            max-width: 160px !important;
+        }
+    }
+}
+
+nav.navbar .navbar-nav {
+}
+
+.content_section {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    .content_title {
+        color: black;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &:not(.no_content_props) {
+        max-height: 100vh;
+        overflow: auto;
+        background-color: white;
+        padding: 25px 150px 0 150px;
+
+        @media only screen and (max-width: 1200px) {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        @media only screen and (max-width: 830px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
