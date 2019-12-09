@@ -9,6 +9,8 @@
    */
   Initialise: function() {
 
+    alert("11");
+
     // Fade in elements
     setTimeout(function() {
       $(".about_btn_cont").addClass("about_btn_fade_in");
@@ -58,6 +60,11 @@
         this.scrollTop += (scrollAmt * 2);
       });
 
+      // Remove drop down menus in the video section on scroll
+      $body.on("touchmove, scroll", "#videosection", function() {
+        $(".dropdown_menu").remove();
+      });
+
       // Video img click
       $body.on("click", "[data-parts]", function(event) {
         var partsText = $(this).attr("data-parts");
@@ -93,10 +100,11 @@
             $dropDownMenu.css("top", event.clientY + "px");
             $dropDownMenu.css("left", event.clientX + "px");
             $body.append($dropDownMenu);
+            var handlerVal = "x" + Math.random() * 10000;
 
-            $body.off(".videoDropHandler").on("click.videoDropHandler", function() {
-              $(".dropdown_menu").remove();
-              $body.off(".videoDropHandler");
+            $body.on("click." + handlerVal, ":not(.dropdown_menu)", function() {
+              $dropDownMenu.remove();
+              $body.off("." + handlerVal);
             });
           }
         }
