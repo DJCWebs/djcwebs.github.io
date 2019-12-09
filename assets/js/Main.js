@@ -9,7 +9,7 @@
    */
   Initialise: function() {
 
-    alert("66");
+    alert("77");
 
     // Fade in elements
     setTimeout(function() {
@@ -97,7 +97,7 @@
             $dropDownMenu.css("left", event.clientX + "px");
             $body.append($dropDownMenu);
 
-            $body.off(".videoDropHandler").on("click.videoDropHandler", ":not(.dropdown_menu)", function() {
+            $body.off(".videoDropHandler").on("click.videoDropHandler", function() {
               $(".dropdown_menu").remove();
               $body.off(".videoDropHandler");
             });
