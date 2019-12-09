@@ -9,7 +9,7 @@
    */
   Initialise: function() {
 
-    alert("11");
+    alert("113123");
 
     // Fade in elements
     setTimeout(function() {
@@ -61,7 +61,8 @@
       });
 
       // Remove drop down menus in the video section on scroll
-      $body.on("touchmove, scroll", "#videosection", function() {
+      $body.on("touchmove, scroll", function() {
+        alert("scroll");
         $(".dropdown_menu").remove();
       });
 
