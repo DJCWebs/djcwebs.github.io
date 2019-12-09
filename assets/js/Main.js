@@ -23,7 +23,7 @@
 
         if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
           alert("mobile");
-          window.scrollTop = topValue;
+          $body.get(0).scrollTop = topValue;
           //window.scrollTo(0, topValue);
           //window.scrollTo(0, topValue);
           //$body.animate({
