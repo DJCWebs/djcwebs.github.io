@@ -9,8 +9,6 @@
    */
   Initialise: function() {
 
-    alert("77");
-
     // Fade in elements
     setTimeout(function() {
       $(".about_btn_cont").addClass("about_btn_fade_in");
@@ -62,7 +60,6 @@
 
       // Video img click
       $body.on("click", "[data-parts]", function(event) {
-        debugger;
         var partsText = $(this).attr("data-parts");
         var parts = partsText.split("|,|");
 
