@@ -16,6 +16,8 @@
 
       var $body = $("body");
 
+      alert("111");
+
       // Scroll functionality
       $body.on("click", "[data-scroll]", function() {
         var $scrollTo = $("#" + $(this).attr("data-scroll"));
