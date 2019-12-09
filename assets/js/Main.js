@@ -19,19 +19,13 @@
       // Scroll functionality
       $body.on("click", "[data-scroll]", function() {
         var $scrollTo = $("#" + $(this).attr("data-scroll"));
-        var topValue = $scrollTo.offset().top + $("body").scrollTop();
 
         if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-          alert("mobile");
-          $body.get(0).scrollTop = topValue;
-          //window.scrollTo(0, topValue);
-          //window.scrollTo(0, topValue);
-          //$body.animate({
-          //  scrollTop: topValue
-          //}, 2000);
+          // Mobile solution
+          $(".cali_header_img").after($scrollTo);
         } else {
-          alert("not mobile");
-
+          // Scroll to
+          var topValue = $scrollTo.offset().top + $("body").scrollTop();
           $("html, body").animate({
             scrollTop: topValue
           }, 2000);

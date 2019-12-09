@@ -24,14 +24,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
           integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
           crossorigin="anonymous"></script>
-  <script src="assets/js/Main.js?11"></script>
+  <script src="assets/js/Main.js?12"></script>
 </head>
 <body>
   <div class="cali_header_img">
     <div class="header_blurrer"></div>
   </div>
 
-  <div class="content_section no_content_props">
+  <div class="content_section no_content_props" id="homesection">
     <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,7 +101,7 @@
     </div>
 
     <div class="about_to_top_cont">
-      <button class="btn btn-brand back_to_top">
+      <button class="btn btn-brand" data-scroll="homesection">
         To the top!
         <i class="fas fa-arrow-up"></i>
       </button>
@@ -136,7 +136,7 @@
       </div>
     </div>
     <div class="gallery_to_top_cont">
-      <button class="btn btn-brand back_to_top">
+      <button class="btn btn-brand" data-scroll="homesection">
         To the top!
         <i class="fas fa-arrow-up"></i>
       </button>
@@ -151,7 +151,7 @@
     <h1 class="content_title">Videos</h1>
     <div class="videos_cont"></div>
     <div class="videos_to_top_cont">
-      <button class="btn btn-brand back_to_top">
+      <button class="btn btn-brand" data-scroll="homesection">
         To the top!
         <i class="fas fa-arrow-up"></i>
       </button>
