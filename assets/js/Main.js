@@ -4,6 +4,8 @@
 
   Initialise: function() {
 
+    alert("22");
+
     setTimeout(function() {
       $(".about_btn_cont").addClass("about_btn_fade_in");
       $(".cali_header_img").addClass("blur_header");
