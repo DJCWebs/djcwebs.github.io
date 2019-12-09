@@ -9,8 +9,6 @@
    */
   Initialise: function() {
 
-    alert("goodbye");
-
     // Fade in elements
     setTimeout(function() {
       $(".about_btn_cont").addClass("about_btn_fade_in");
@@ -60,12 +58,6 @@
         this.scrollTop += (scrollAmt * 2);
       });
 
-      // Remove drop down menus in the video section on scroll
-      $body.on("touchmove, scroll, gesturechange", function() {
-        alert("scroll");
-        $(".dropdown_menu").remove();
-      });
-
       // Video img click
       $body.on("click", "[data-parts]", function(event) {
         var partsText = $(this).attr("data-parts");
@@ -107,7 +99,6 @@
               $dropDownMenu.remove();
               $body.off("." + handlerVal);
             });
-
             $body.on("touchstart." + handlerVal, ":not(.dropdown_menu)", function() {
               $dropDownMenu.remove();
               $body.off("." + handlerVal);
