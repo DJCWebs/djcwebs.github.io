@@ -16,16 +16,23 @@
 
       var $body = $("body");
 
-      alert("111");
-
       // Scroll functionality
       $body.on("click", "[data-scroll]", function() {
         var $scrollTo = $("#" + $(this).attr("data-scroll"));
         var topValue = $scrollTo.offset().top + $("body").scrollTop();
-        alert(topValue);
-        $("body").animate({
-          scrollTop: topValue
-        }, 2000);
+        alert(topValue + "test");
+
+        if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+          window.scrollTo(0, topValue);
+
+          //$body.animate({
+          //  scrollTop: topValue
+          //}, 2000);
+        } else {
+          $("html, body").animate({
+            scrollTop: topValue
+          }, 2000);
+        }
       });
 
       // Back to top btn
@@ -181,7 +188,7 @@
         ]
       },
     ];
-    
+
     var $videosCont = $(".videos_cont");
 
     $(videos).each(function() {
