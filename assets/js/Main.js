@@ -2,27 +2,40 @@
 
   Init: false,
 
+  IsMobile: false,
+
+  /*
+   * Initialise main
+   */
   Initialise: function() {
 
-    alert("22");
+    alert("44");
 
+    // Fade in elements
     setTimeout(function() {
       $(".about_btn_cont").addClass("about_btn_fade_in");
       $(".cali_header_img").addClass("blur_header");
     }, 500);
 
-    // Load the video content
-    CaliMain.LoadVideoContent();
-
     if (!CaliMain.Init) {
 
+      // Determine if this is mobile
+      CaliMain.IsMobile = navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/);
+
+      // Fix mobile height issues 
+      CaliMain.MobileHeightFix();
+
+      // Load the video content
+      CaliMain.LoadVideoContent();
+
+      // Get the body
       var $body = $("body");
 
       // Scroll functionality
       $body.on("click", "[data-scroll]", function() {
         var $scrollTo = $("#" + $(this).attr("data-scroll"));
 
-        if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+        if (CaliMain.IsMobile) {
           // Mobile solution
           $(".cali_header_img").after($scrollTo);
         } else {
@@ -96,6 +109,26 @@
       CaliMain.Init = true;
     }
 
+  },
+
+  /*
+   * Fix mobile height issues
+   */
+  MobileHeightFix: function() {
+
+    if (CaliMain.IsMobile) {
+      var innerHeight = window.innerHeight;
+      alert("height " + innerHeight);
+      var $contentSections = $(".content_section:not(.no_content_props)");
+      $contentSections.css("height", innerHeight + "px");
+      $contentSections.css("max-height", innerHeight + "px");
+
+      $(window).resize(function() {
+        var innerHeight = window.innerHeight;
+        $contentSections.css("height", innerHeight + "px");
+        $contentSections.css("max-height", innerHeight + "px");
+      });
+    }
   },
 
   /*
