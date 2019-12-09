@@ -20,6 +20,7 @@
       $body.on("click", "[data-scroll]", function() {
         var $scrollTo = $("#" + $(this).attr("data-scroll"));
         var topValue = $scrollTo.offset().top + $("body").scrollTop();
+        alert(topValue);
         $("html, body").animate({
           scrollTop: topValue
         }, 2000);
