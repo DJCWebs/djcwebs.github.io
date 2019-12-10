@@ -214,7 +214,7 @@
       },
       {
         title: "The Full Moon Pyjama Party 13/10/2019",
-        image: "https://i.imgur.com/PsoOuLM.png",
+        image: "https://i.imgur.com/bL0bNB0.jpg",
         parts: [
           "https://www.facebook.com/djcali.musicpage/videos/2408624232719911/"
         ]
